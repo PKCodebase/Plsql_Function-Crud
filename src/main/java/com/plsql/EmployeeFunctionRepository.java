@@ -46,4 +46,12 @@ public class EmployeeFunctionRepository {
                 .setParameter("salary", salary)
                 .getSingleResult();
     }
+
+    @Transactional
+    public String deleteEmployee(Long id) {
+        return (String) em.createNativeQuery("SELECT delete_employee(:id)")
+                .setParameter("id", id)
+                .getSingleResult();
+    }
+
 }

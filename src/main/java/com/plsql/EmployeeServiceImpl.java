@@ -31,4 +31,8 @@ public class EmployeeServiceImpl implements EmployeeService {
     public String addEmployee(String name, String email, Double salary) {
         return repo.addEmployee(name, email, salary);
     }
+    @Override
+    public String deleteEmployee(Long id) {
+        return repo.deleteEmployee(id);
+    }
 }

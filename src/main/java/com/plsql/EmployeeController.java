@@ -31,10 +31,16 @@ public class EmployeeController {
         return service.updateEmployee(id, name, email, salary);
     }
 
+
     @PostMapping("/add")
     public String add(@RequestParam String name,
                       @RequestParam String email,
                       @RequestParam Double salary) {
         return service.addEmployee(name, email, salary);
     }
+    @DeleteMapping("/{id}")
+    public String delete(@PathVariable Long id) {
+        return service.deleteEmployee(id);
+    }
+
 }
